@@ -25,11 +25,9 @@ public class enemyHorizontalmoment : MonoBehaviour
         Move();
 
     }
-    private void OnCollisionEnter2D(Collision2D Hit)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
         Move();
-        Debug.Log("wat");
     }
 
 

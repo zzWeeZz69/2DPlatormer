@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class KYS : MonoBehaviour
+public class KillPlayer : MonoBehaviour
 {
     public int deaths = 0;
     public TextMeshProUGUI deathText;
@@ -16,7 +16,7 @@ public class KYS : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Scene active = SceneManager.GetActiveScene();
             SceneManager.LoadScene(active.name);
-            deathText.text = string.Format("deaths: {0}", deaths ++);
+            
         }
     }
 }

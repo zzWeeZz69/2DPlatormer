@@ -10,10 +10,13 @@ public class playermovement : MonoBehaviour
     public groundcheck groundcheck;
     public float horizontalMove;
     [Header("Animator")]
-
-
+    [Space]
     public Animator Anim;
+    [Header("some other variables")]
+    [Space]
     public bool Faceright;
+    public GameObject Deatheffect;
+
 
     private Rigidbody2D rbody;
     // Use this for initialization
@@ -21,18 +24,20 @@ public class playermovement : MonoBehaviour
     {
         Faceright = true;
         rbody = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
-    
+
     void Update()
     {
+        
 
-    
         rbody.velocity = new Vector2(Input.GetAxis("Horizontal") * movespeed, rbody.velocity.y);
 
         Anim.SetFloat("Speed", Mathf.Abs(rbody.velocity.x));
-        
+       
+
 
         if (Input.GetKeyDown(KeyCode.Space) && groundcheck.touches > 0)
         {
@@ -43,6 +48,10 @@ public class playermovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D Die)
     {
-        
+        if (Die.gameObject.tag == "Killplayer")
+        {
+            Instantiate(Deatheffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }
