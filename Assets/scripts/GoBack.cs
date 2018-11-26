@@ -9,11 +9,15 @@ public class GoBack : MonoBehaviour
     void TaskOnClick()
     {
         //Output this to console when Button1 or Button3 is clicked
-        Debug.Log("You have clicked the button!");
+        
+        
     }
-        public void loadlevel(string SampleScene)
+    public void loadlevel(string SampleScene)
     {
-        SceneManager.LoadScene(SampleScene);
+        Debug.Log("You have clicked the button!");
+#if !UNITY_EDITOR
+        Application.Quit();
 
+#endif
     }
 }

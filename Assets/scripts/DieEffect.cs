@@ -10,6 +10,7 @@ public class DieEffect : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D Die)
     {
+        
         if (Die.gameObject.tag == "Killplayer")
         {
             //Spelar "Deatheffect" vart spelarn är

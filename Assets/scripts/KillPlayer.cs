@@ -13,6 +13,7 @@ public class KillPlayer : MonoBehaviour
         {
             Debug.Log("Hit");
             StartCoroutine(LoadSceneAfterTime(0.5f));
+            
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
