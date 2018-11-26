@@ -34,7 +34,16 @@ public class playermovement : MonoBehaviour
         rbody.velocity = new Vector2(Input.GetAxis("Horizontal") * movespeed, rbody.velocity.y);
 
         Anim.SetFloat("Speed", Mathf.Abs(rbody.velocity.x));
-       
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
 
 
         if (Input.GetKeyDown(KeyCode.Space) && groundcheck.touches > 0)
