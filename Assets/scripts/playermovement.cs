@@ -15,8 +15,6 @@ public class playermovement : MonoBehaviour
     [Header("some other variables")]
     [Space]
     public bool Faceright;
-    public GameObject Deatheffect;
-
 
     private Rigidbody2D rbody;
     // Use this for initialization
@@ -46,12 +44,5 @@ public class playermovement : MonoBehaviour
 
 
     }
-    private void OnCollisionEnter2D(Collision2D Die)
-    {
-        if (Die.gameObject.tag == "Killplayer")
-        {
-            Instantiate(Deatheffect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-    }
+    
 }

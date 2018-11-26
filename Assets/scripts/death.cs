@@ -14,11 +14,18 @@ public class death : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            print("gg");
+            
+            StartCoroutine( LoadSceneAfterTime(3f) );
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            Scene active = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(active.name);
+            
         }
 
+    }
+
+    public IEnumerator LoadSceneAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Scene active = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(active.name);
     }
 }

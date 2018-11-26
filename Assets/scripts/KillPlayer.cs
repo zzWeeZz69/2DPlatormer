@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
+
 
 public class KillPlayer : MonoBehaviour
 {
-    public int deaths = 0;
-    public TextMeshProUGUI deathText;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            print("gg");
+            Debug.Log("Hit");
+            StartCoroutine(LoadSceneAfterTime(0.5f));
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            Scene active = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(active.name);
-            
         }
+    }
+    
+    
+
+    public IEnumerator LoadSceneAfterTime(float time)
+    {
+        Debug.Log("Hit3");
+        yield return new WaitForSeconds(time);
+        Scene active = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(active.name);
     }
 }
