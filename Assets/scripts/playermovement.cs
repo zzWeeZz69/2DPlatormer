@@ -12,6 +12,7 @@ public class playermovement : MonoBehaviour
     [Header("Animator")]
     [Space]
     public Animator Anim;
+    public AudioSource Sound;
     [Header("some other variables")]
     [Space]
     public bool Faceright;
@@ -46,9 +47,10 @@ public class playermovement : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && groundcheck.touches > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && groundcheck.touches > 1)
         {
             rbody.velocity = new Vector2(rbody.velocity.x, jumpHeight);
+            Sound.Play();
         }
 
 
