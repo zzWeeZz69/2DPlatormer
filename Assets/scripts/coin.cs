@@ -5,6 +5,7 @@ using UnityEngine;
 public class coin : MonoBehaviour
 {
     public int score = 1;
+    public GameObject CoinEffect;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -28,6 +29,7 @@ public class coin : MonoBehaviour
             {
                 Debug.LogError("GameController finns inte");
             }
+            Instantiate(CoinEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

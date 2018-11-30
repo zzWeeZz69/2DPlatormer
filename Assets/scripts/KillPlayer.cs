@@ -17,8 +17,18 @@ public class KillPlayer : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-    
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Hit");
+            StartCoroutine(LoadSceneAfterTime(0.5f));
+
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+
 
     public IEnumerator LoadSceneAfterTime(float time)
     {
