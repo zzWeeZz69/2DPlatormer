@@ -2,19 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenSpike : MonoBehaviour
+public class EnemyKill : MonoBehaviour
 {
-    public Animator anim;
-    private void Start()
-    {
-       
-    }
-
+    public GameObject DeathEffect;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            anim.GetBool("Hit");
+        Instantiate(DeathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
         }
     }
 }
