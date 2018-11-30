@@ -8,7 +8,7 @@ public class enemyHorizontalmoment : MonoBehaviour
     [Space]
     public float moveSpeed = 2f;
     public float Raylegth;
-    public GameObject Walls;
+    
 
 
     [Header("turn Bool")]
