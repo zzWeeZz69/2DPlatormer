@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 
     public static bool GameIsPaused = false;
     public GameObject PauseGameUI;
+    public GameObject ScoreText;
     
 
     // Update is called once per frame
@@ -23,6 +23,14 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+        }
+        if(SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            ScoreText.SetActive(false);
+        }
+        else
+        {
+            ScoreText.SetActive(true);
         }
     }
 
@@ -42,7 +50,6 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Debug.Log("Loading Menu.....");
         SceneManager.LoadScene(0);
     }
 
