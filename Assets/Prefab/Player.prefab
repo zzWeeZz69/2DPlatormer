@@ -23,10 +23,11 @@ GameObject:
   - component: {fileID: 61486032523104192}
   - component: {fileID: 50524735112406848}
   - component: {fileID: 114047598096665034}
-  - component: {fileID: 95456010572069380}
   - component: {fileID: 114320242633501974}
+  - component: {fileID: 95456010572069380}
   - component: {fileID: 82573020067677202}
   - component: {fileID: 82131758215802646}
+  - component: {fileID: 114704156357120416}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191539119726148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.792238, y: -0.87666935, z: 0}
+  m_LocalPosition: {x: -6.5080476, y: -0.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4682304699617884}
@@ -110,7 +111,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0060112476, y: -0.42580426}
+  m_Offset: {x: -0.008392096, y: -0.4376264}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -121,7 +122,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8256688, y: 1.1483915}
+  m_Size: {x: 0.7968621, y: 1.1247473}
   m_EdgeRadius: 0.001
 --- !u!61 &61666646155102772
 BoxCollider2D:
@@ -251,8 +252,9 @@ AudioSource:
   m_GameObject: {fileID: 1191539119726148}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2bd9a8082b2b4e94a9a1b1f02c67341e, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5ccbe9e5ef5e63c448183c93b85ef1a9,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 0bb2a985b01b452489b9de3c620d986e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.741
   m_Pitch: 1
@@ -370,7 +372,7 @@ MonoBehaviour:
   movespeed: 4.3
   jumpHeight: 15
   groundcheck: {fileID: 114485923746228154}
-  horizontalMove: 2
+  horizontalMove: 0.85
   Anim: {fileID: 95456010572069380}
   Sound: {fileID: 82131758215802646}
   Faceright: 1
@@ -399,6 +401,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touches: 1
+--- !u!114 &114704156357120416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191539119726148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a2d609ec2fc5640b5e777b4336acc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pause: {fileID: 0}
+  keyValue: 0
 --- !u!212 &212008149019374310
 SpriteRenderer:
   m_ObjectHideFlags: 1

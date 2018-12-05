@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseGameUI;
     public GameObject ScoreText;
+    public GameObject EmptyKey;
+    public GameObject FullKey;
+    public bool KeyActive;
     
 
     // Update is called once per frame
@@ -31,6 +34,18 @@ public class PauseMenu : MonoBehaviour
         else
         {
             ScoreText.SetActive(true);
+        }
+
+
+        if(KeyActive == true)
+        {
+            FullKey.SetActive(true);
+            EmptyKey.SetActive(false);
+        }
+        if(KeyActive == false)
+        {
+            FullKey.SetActive(false);
+            EmptyKey.SetActive(true);
         }
     }
 
