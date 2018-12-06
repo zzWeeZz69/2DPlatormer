@@ -15,9 +15,6 @@ public class GoBack : MonoBehaviour
     public void loadlevel(string SampleScene)
     {
         Debug.Log("You have clicked the button!");
-#if !UNITY_EDITOR
-        Application.Quit();
-
-#endif
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -27,7 +27,6 @@ GameObject:
   - component: {fileID: 95456010572069380}
   - component: {fileID: 82573020067677202}
   - component: {fileID: 82131758215802646}
-  - component: {fileID: 114704156357120416}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -376,6 +375,8 @@ MonoBehaviour:
   Anim: {fileID: 95456010572069380}
   Sound: {fileID: 82131758215802646}
   Faceright: 1
+  DashSpeed: 49.4
+  StartDashTime: 0.1
 --- !u!114 &114320242633501974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,19 +402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touches: 1
---- !u!114 &114704156357120416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1191539119726148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6a2d609ec2fc5640b5e777b4336acc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pause: {fileID: 0}
-  keyValue: 0
 --- !u!212 &212008149019374310
 SpriteRenderer:
   m_ObjectHideFlags: 1

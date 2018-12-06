@@ -9,13 +9,27 @@ public class playermovement : MonoBehaviour
     public float jumpHeight;
     public groundcheck groundcheck;
     public float horizontalMove;
+
     [Header("Animator")]
     [Space]
+
     public Animator Anim;
     public AudioSource Sound;
+
     [Header("some other variables")]
     [Space]
+
     public bool Faceright;
+
+    [Header("Dash")]
+    [Space]
+
+    [Range(0, 80f)]
+    public float DashSpeed;
+    private float DashTime;
+    public float StartDashTime;
+    private int Diracton;
+    public GameObject DashEffect;
 
     private Rigidbody2D rbody;
     // Use this for initialization
@@ -23,6 +37,7 @@ public class playermovement : MonoBehaviour
     {
         Faceright = true;
         rbody = GetComponent<Rigidbody2D>();
+        DashTime = StartDashTime;
 
     }
 
@@ -53,7 +68,40 @@ public class playermovement : MonoBehaviour
             Sound.Play();
         }
 
-       
+       if(Diracton == 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                Diracton = 1;
+                Instantiate(DashEffect, transform.position, Quaternion.identity);
+            }
+            else if (Input.GetKeyDown(KeyCode.C))
+            {
+                Diracton = 2;
+                Instantiate(DashEffect, transform.position, Quaternion.identity);
+            }
+        }
+        else
+        {
+            if(DashTime <= 0)
+            {
+                Diracton = 0;
+                DashTime = StartDashTime;
+                rbody.velocity = Vector2.zero;
+            }
+            else
+            {
+                DashTime -= Time.deltaTime;
+                if (Diracton == 1)
+                {
+                    rbody.velocity = Vector2.left * DashSpeed;
+                }
+                else if(Diracton == 2)
+                {
+                    rbody.velocity = Vector2.right * DashSpeed;
+                }
+            }
+        }
 
     }
     
