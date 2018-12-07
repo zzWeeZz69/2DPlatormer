@@ -8,6 +8,7 @@ public class coin : MonoBehaviour
     public GameObject CoinEffect;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // kolla om Triggern har träffat spelan med tag "Player"
         if (collision.tag == "Player")
         {
             // skapa en tremporär variabel "controller och sätt den till
@@ -15,6 +16,7 @@ public class coin : MonoBehaviour
             GameObject controller = GameObject.FindWithTag("GameController");
             if (controller != null)
             {
+                // hittar "tracker variablen från scripten ScoreTracker
                 ScoreTracker tracker = controller.GetComponent<ScoreTracker>();
                 if (tracker != null)
                 {
@@ -29,7 +31,10 @@ public class coin : MonoBehaviour
             {
                 Debug.LogError("GameController finns inte");
             }
+            // lägger till en GameObject prefab som är en effect på "coin"'s platts men vi vill inte ha samma rotation som Coin så då andvänder vi Quaternion.identity så det inte hänner
             Instantiate(CoinEffect, transform.position, Quaternion.identity);
+
+            //förstör Coin
             Destroy(gameObject);
         }
     }

@@ -12,6 +12,7 @@ public class PlayerCameraFollow : MonoBehaviour
     {
         if (Target != null)
         {
+            // följer effeter "target" som är spelatern
             transform.position = Target.position + offset;
 
         }
